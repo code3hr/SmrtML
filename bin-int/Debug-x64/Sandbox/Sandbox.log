@@ -1,0 +1,3 @@
+﻿  Application.cpp
+C:\ML_Engine_Dev\SmrtML\Sandbox\src\Application.cpp(8,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Sandbox.vcxproj -> C:\ML_Engine_Dev\SmrtML\bin\Debug-x64\Sandbox\Sandbox.exe
