@@ -3,5 +3,7 @@
 
 #include "SmrtML/Application.h"
 
+#include "SmrtML/Log.h"
+
 // --Entry point---------------------------
 #include "SmrtML/EntryPoint.h"

@@ -1,0 +1,3 @@
+[submodule "SmrtML/vendor/spdlog"]
+	path = SmrtML/vendor/spdlog
+	url = https://github.com/gabime/spdlog
