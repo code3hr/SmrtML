@@ -8,6 +8,7 @@ workspace "SmrtML"
         "Dist"
     }
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+startproject "Sandbox"
 project "SmrtML"
     location "SmrtML"
     kind "SharedLib"
@@ -40,13 +41,17 @@ project "SmrtML"
          }
     filter "configurations:Debug"
         defines "SML_DEBUG"
+        runtime "Debug"
         symbols "On"
 
     filter "configurations:Release"
+    runtime "Release"
+
         defines "SML_RELEASE"
         optimize "On"
 
     filter "configurations:Dist"
+    buildoptions "/MD"
         defines "SML_DIST"
         optimize "On"    
     -- filter {"system.windows", "configuration:Release"} for both if needed
