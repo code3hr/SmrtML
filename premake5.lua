@@ -23,13 +23,14 @@ project "SmrtML"
     }
     includedirs
     {
-      "%{prj.name}/vendor/spdlog/include"
+     "%Pprj.name}/src",
+        "%{prj.name}/vendor/spdlog/include"
     }
 
     filter "system:windows"
          cppdialect "c++17"
          staticruntime "On"
-         systemversion "10.0.18362.0"
+         systemversion "latest"
          defines
          {
             "SML_PLATFORM_WINDOWS",
@@ -81,7 +82,7 @@ links
 filter "system:windows"
      cppdialect "c++17"
      staticruntime "On"
-     systemversion "10.0.18362.0"
+     systemversion "latest"
      defines
      {
         "SML_PLATFORM_WINDOWS",
