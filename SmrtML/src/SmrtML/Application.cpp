@@ -1,4 +1,6 @@
+#include "smrtpch.h"
 #include "Application.h"
+
 namespace smrt_ml {
 
 	Application::Application()
@@ -12,4 +14,7 @@ namespace smrt_ml {
 		while (true);
 	}
 
+	void print() {
+		std::cout << "hello" << std::endl;
+	}
 }

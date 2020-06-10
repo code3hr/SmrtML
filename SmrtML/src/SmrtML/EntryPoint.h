@@ -3,6 +3,7 @@
 #ifdef SML_PLATFORM_WINDOWS
 extern smrt_ml::Application* smrt_ml::CreateApplication();
 
+
 int main(int agrc, char ** agrv)
 {
 
@@ -12,7 +13,8 @@ int main(int agrc, char ** agrv)
 	SML_CORE_INFO("Hello VERSION = {0}", version);
 
 	auto app = smrt_ml::CreateApplication();
-	app->Run();
+	//app->Run();
+	//app->print();
 	delete app;
 }
 #else

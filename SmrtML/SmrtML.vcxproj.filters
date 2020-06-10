@@ -19,6 +19,7 @@
       <Filter>SmrtML</Filter>
     </ClInclude>
     <ClInclude Include="src\smrt_ml.h" />
+    <ClInclude Include="src\smrtpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\SmrtML\Application.cpp">
@@ -27,5 +28,6 @@
     <ClCompile Include="src\SmrtML\Log.cpp">
       <Filter>SmrtML</Filter>
     </ClCompile>
+    <ClCompile Include="src\smrtpch.cpp" />
   </ItemGroup>
 </Project>

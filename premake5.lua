@@ -16,6 +16,10 @@ project "SmrtML"
     targetdir("bin/" .. outputdir .. "/%{prj.name}")
     objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
+
+
+    pchheader "smrtpch.h"
+    pchsource "SmrtML/src/smrtpch.cpp"
     files 
     {
         "%{prj.name}/src/**.h",
@@ -23,7 +27,7 @@ project "SmrtML"
     }
     includedirs
     {
-     "%Pprj.name}/src",
+     "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include"
     }
 
