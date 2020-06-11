@@ -17,6 +17,7 @@ public:
 
 	}
 };
+
 smrt_ml::Application* smrt_ml::CreateApplication()
 {
 	Sandbox b = Sandbox();

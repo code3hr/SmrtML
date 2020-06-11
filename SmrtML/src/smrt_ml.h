@@ -7,3 +7,6 @@
 
 // --Entry point---------------------------
 #include "SmrtML/EntryPoint.h"
+
+//----ML algorithms----------------
+#include "SmrtML/Events.h"

@@ -11,7 +11,11 @@ namespace smrt_ml {
 		void Run();
 		virtual ~Application();
 	};
+
 	//to be define in client
 	Application* CreateApplication();
 	void SML_API print();
+
+
+
 }
