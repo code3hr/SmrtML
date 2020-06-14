@@ -28,9 +28,11 @@ project "SmrtML"
     includedirs
     {
      "%{prj.name}/src",
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+         "%{prj.name}/vendor/armadillo/include",
+         "%{prj.name}/vendor/mkl/include"
     }
-
+ 
     filter "system:windows"
          cppdialect "c++17"
          staticruntime "On"
@@ -76,7 +78,9 @@ files
 includedirs
 {
   "SmrtML/vendor/spdlog/include",
-  "SmrtML/src"
+  "SmrtML/src",
+  "SmrtML/vendor/armadillo/include",
+         "SmrtML/vendor/mkl/include"
 }
 
 links 
