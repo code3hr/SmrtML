@@ -2,6 +2,6 @@
 .vs/
 bin/
 bin-int/
-
+SmrtML/vendor/mkl/
 #files
 *.user
