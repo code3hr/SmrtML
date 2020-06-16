@@ -48,18 +48,20 @@ project "SmrtML"
          }
     filter "configurations:Debug"
         defines "SML_DEBUG"
+        buildoptions "/MDd"
         runtime "Debug"
         symbols "On"
 
     filter "configurations:Release"
     runtime "Release"
-
+    buildoptions "/MD"
         defines "SML_RELEASE"
         optimize "On"
 
     filter "configurations:Dist"
     buildoptions "/MD"
         defines "SML_DIST"
+        buildoptions "/MD"
         optimize "On"    
     -- filter {"system.windows", "configuration:Release"} for both if needed
     --   buildoptions "/MT" //FOR MULTI THREADING
@@ -99,12 +101,15 @@ filter "system:windows"
     
 filter "configurations:Debug"
     defines "SML_DEBUG"
+    buildoptions "/MDd"
     symbols "On"
 
 filter "configurations:Release"
 defines "SML_RELEASE"
+buildoptions "/MD"
 optimize "On"
 
 filter "configurations:Dist"
 defines "SML_DIST"
+buildoptions "/MD"
 optimize "On"   
