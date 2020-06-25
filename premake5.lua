@@ -30,7 +30,8 @@ project "SmrtML"
      "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
          "%{prj.name}/vendor/armadillo/include",
-         "%{prj.name}/vendor/mkl/include"
+         "%{prj.name}/vendor/mkl/include",
+         "%{prj.name}/vendor/hdf5/include",
     }
  
     filter "system:windows"
@@ -82,7 +83,9 @@ includedirs
   "SmrtML/vendor/spdlog/include",
   "SmrtML/src",
   "SmrtML/vendor/armadillo/include",
-         "SmrtML/vendor/mkl/include"
+  "SmrtML/vendor/mkl/include",
+  "SmrtML/vendor/hdf5/include"
+
 }
 
 links 
@@ -101,12 +104,12 @@ filter "system:windows"
     
 filter "configurations:Debug"
     defines "SML_DEBUG"
-    buildoptions "/MDd"
+    -- buildoptions "/MDd"
     symbols "On"
 
 filter "configurations:Release"
 defines "SML_RELEASE"
-buildoptions "/MD"
+-- buildoptions "/MD"
 optimize "On"
 
 filter "configurations:Dist"

@@ -79,8 +79,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>smrtpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>SML_PLATFORM_WINDOWS;SML_BUILD_DLL;SML_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\armadillo\include;vendor\mkl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SML_PLATFORM_WINDOWS;SML_BUILD_DLL;H5_BUILT_AS_DYNAMIC_LIB;SML_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\armadillo\include;vendor\mkl\include;vendor\hdf5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -91,8 +91,8 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ImportLibrary>..\bin\Debug-windows-x86_64\SmrtML\SmrtML.lib</ImportLibrary>
-      <AdditionalDependencies>mkl_core.lib;mkl_sequential.lib;mkl_intel_lp64.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)SmrtML\vendor\mkl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mkl_core.lib;mkl_intel_lp64.lib;mkl_sequential.lib;mkl_tbb_thread.lib;szip.lib;zlib.lib;hdf5.lib;hdf5_cpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)SmrtML/vendor/mkl/lib;$(SolutionDir)SmrtML/vendor/hdf5/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>IF EXIST ..\bin\Debug-windows-x86_64\SmrtML\SmrtML.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\SmrtML\SmrtML.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\SmrtML\SmrtML.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
@@ -103,8 +103,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>smrtpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>SML_PLATFORM_WINDOWS;SML_BUILD_DLL;SML_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\armadillo\include;vendor\mkl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SML_PLATFORM_WINDOWS;SML_BUILD_DLL;H5_BUILT_AS_DYNAMIC_LIB;SML_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\armadillo\include;vendor\mkl\include;vendor\hdf5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -119,8 +119,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ImportLibrary>..\bin\Release-windows-x86_64\SmrtML\SmrtML.lib</ImportLibrary>
-      <AdditionalDependencies>mkl_core.lib;mkl_sequential.lib;mkl_intel_lp64.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)SmrtML\vendor\mkl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mkl_core.lib;mkl_intel_lp64.lib;mkl_sequential.lib;mkl_tbb_thread.lib;szip.lib;zlib.lib;hdf5.lib;hdf5_cpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)SmrtML/vendor/mkl/lib;$(SolutionDir)SmrtML/vendor/hdf5/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>IF EXIST ..\bin\Release-windows-x86_64\SmrtML\SmrtML.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\SmrtML\SmrtML.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\SmrtML\SmrtML.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
@@ -131,8 +131,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>smrtpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>SML_PLATFORM_WINDOWS;SML_BUILD_DLL;SML_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\armadillo\include;vendor\mkl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SML_PLATFORM_WINDOWS;SML_BUILD_DLL;H5_BUILT_AS_DYNAMIC_LIB;SML_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\armadillo\include;vendor\mkl\include;vendor\hdf5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -147,8 +147,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ImportLibrary>..\bin\Dist-windows-x86_64\SmrtML\SmrtML.lib</ImportLibrary>
-      <AdditionalDependencies>mkl_core.lib;mkl_sequential.lib;mkl_intel_lp64.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)SmrtML\vendor\mkl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mkl_core.lib;mkl_intel_lp64.lib;mkl_sequential.lib;mkl_tbb_thread.lib;szip.lib;zlib.lib;hdf5.lib;hdf5_cpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)SmrtML/vendor/mkl/lib;$(SolutionDir)SmrtML/vendor/hdf5/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>IF EXIST ..\bin\Dist-windows-x86_64\SmrtML\SmrtML.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\SmrtML\SmrtML.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\SmrtML\SmrtML.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>

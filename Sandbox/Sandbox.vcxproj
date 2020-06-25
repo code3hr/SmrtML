@@ -78,50 +78,48 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>SML_PLATFORM_WINDOWS;SML_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\SmrtML\vendor\spdlog\include;..\SmrtML\src;..\SmrtML\vendor\armadillo\include;..\SmrtML\vendor\mkl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SML_PLATFORM_WINDOWS;H5_BUILT_AS_DYNAMIC_LIB;SML_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\SmrtML\vendor\spdlog\include;..\SmrtML\src;..\SmrtML\vendor\armadillo\include;..\SmrtML\vendor\mkl\include;..\SmrtML\vendor\hdf5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)SmrtML\vendor\mkl\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>mkl_core.lib;mkl_sequential.lib;mkl_intel_lp64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>mkl_core.lib;mkl_intel_lp64.lib;mkl_sequential.lib;mkl_tbb_thread.lib;szip.lib;zlib.lib;hdf5.lib;hdf5_cpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)SmrtML/vendor/mkl/lib;$(SolutionDir)SmrtML/vendor/hdf5/lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>SML_PLATFORM_WINDOWS;SML_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\SmrtML\vendor\spdlog\include;..\SmrtML\src;..\SmrtML\vendor\armadillo\include;..\SmrtML\vendor\mkl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SML_PLATFORM_WINDOWS;H5_BUILT_AS_DYNAMIC_LIB;SML_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\SmrtML\vendor\spdlog\include;..\SmrtML\src;..\SmrtML\vendor\armadillo\include;..\SmrtML\vendor\mkl\include;..\SmrtML\vendor\hdf5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)SmrtML\vendor\mkl\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>mkl_core.lib;mkl_sequential.lib;mkl_intel_lp64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>mkl_core.lib;mkl_intel_lp64.lib;mkl_sequential.lib;mkl_tbb_thread.lib;szip.lib;zlib.lib;hdf5.lib;hdf5_cpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)SmrtML/vendor/mkl/lib;$(SolutionDir)SmrtML/vendor/hdf5/lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>SML_PLATFORM_WINDOWS;SML_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\SmrtML\vendor\spdlog\include;..\SmrtML\src;..\SmrtML\vendor\armadillo\include;..\SmrtML\vendor\mkl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SML_PLATFORM_WINDOWS;H5_BUILT_AS_DYNAMIC_LIB;SML_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\SmrtML\vendor\spdlog\include;..\SmrtML\src;..\SmrtML\vendor\armadillo\include;..\SmrtML\vendor\mkl\include;..\SmrtML\vendor\hdf5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -135,8 +133,8 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)SmrtML\vendor\mkl\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>mkl_core.lib;mkl_sequential.lib;mkl_intel_lp64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>mkl_core.lib;mkl_intel_lp64.lib;mkl_sequential.lib;mkl_tbb_thread.lib;szip.lib;zlib.lib;hdf5.lib;hdf5_cpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)SmrtML/vendor/mkl/lib;$(SolutionDir)SmrtML/vendor/hdf5/lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
