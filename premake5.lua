@@ -36,7 +36,7 @@ project "SmrtML"
  
     filter "system:windows"
          cppdialect "c++17"
-         staticruntime "On"
+         staticruntime "off"
          systemversion "latest"
          defines
          {
@@ -63,6 +63,8 @@ project "SmrtML"
     buildoptions "/MD"
         defines "SML_DIST"
         buildoptions "/MD"
+        runtime "Release"
+
         optimize "On"    
     -- filter {"system.windows", "configuration:Release"} for both if needed
     --   buildoptions "/MT" //FOR MULTI THREADING
@@ -94,7 +96,7 @@ links
 }
 filter "system:windows"
      cppdialect "c++17"
-     staticruntime "On"
+     staticruntime "off"
      systemversion "latest"
      defines
      {
@@ -105,14 +107,19 @@ filter "system:windows"
 filter "configurations:Debug"
     defines "SML_DEBUG"
     -- buildoptions "/MDd"
+    runtime "Debug"
     symbols "On"
 
 filter "configurations:Release"
 defines "SML_RELEASE"
+runtime "Release"
+
 -- buildoptions "/MD"
 optimize "On"
 
 filter "configurations:Dist"
 defines "SML_DIST"
 buildoptions "/MD"
+runtime "Release"
+
 optimize "On"   
