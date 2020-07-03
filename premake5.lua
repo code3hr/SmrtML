@@ -32,8 +32,18 @@ project "SmrtML"
          "%{prj.name}/vendor/armadillo/include",
          "%{prj.name}/vendor/mkl/include",
          "%{prj.name}/vendor/hdf5/include",
+         "SmrtML/vendor/imgui"
     }
- 
+    libdirs { "%{prj.name}/vendor/mkl/lib",
+    "%{prj.name}/vendor/hdf5/lib" }
+    links { "mkl_core.lib",
+    "mkl_sequential.lib",
+    "mkl_intel_lp64.lib",
+    "szip.lib",
+     "zlib.lib",
+      "hdf5.lib",
+       "hdf5_cpp.lib"
+}
     filter "system:windows"
          cppdialect "c++17"
          staticruntime "off"
@@ -41,10 +51,13 @@ project "SmrtML"
          defines
          {
             "SML_PLATFORM_WINDOWS",
-            "SML_BUILD_DLL"
+            "SML_BUILD_DLL",
+            "H5_BUILT_AS_DYNAMIC_LIB"
+
          }
          postbuildcommands
          {
+             ("IF NOT EXIST ../bin/" .. outputdir .. "/Sandbox mkdir ../bin" .. outputdir .. "/Sandbox"),
              ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
          }
     filter "configurations:Debug"
@@ -86,13 +99,27 @@ includedirs
   "SmrtML/src",
   "SmrtML/vendor/armadillo/include",
   "SmrtML/vendor/mkl/include",
-  "SmrtML/vendor/hdf5/include"
-
+  "SmrtML/vendor/hdf5/include",
+  "SmrtML/vendor/imgui"
 }
 
-links 
-{
-    "SmrtML"
+
+libdirs
+ {
+    "SmrtML/vendor/mkl/lib",
+    "SmrtML/vendor/hdf5/lib",
+
+ }
+links
+ {
+"SmrtML",
+"mkl_core.lib",
+"mkl_sequential.lib",
+"mkl_intel_lp64.lib",
+"szip.lib",
+"zlib.lib",
+"hdf5.lib",
+"hdf5_cpp.lib"
 }
 filter "system:windows"
      cppdialect "c++17"
@@ -101,6 +128,7 @@ filter "system:windows"
      defines
      {
         "SML_PLATFORM_WINDOWS",
+        "H5_BUILT_AS_DYNAMIC_LIB"
     
      }
     

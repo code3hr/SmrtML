@@ -2,6 +2,7 @@
 #include "smrtpch.h"
 #include <armadillo>
 #include "H5Cpp.h"
+
 #ifdef SML_PLATFORM_WINDOWS
 extern smrt_ml::Application* smrt_ml::CreateApplication();
 
@@ -332,7 +333,10 @@ int main(int agrc, char ** agrv)
               error.printErrorStack();
               return -1;
           }
-         
+
+    
+
+  
 	auto app = smrt_ml::CreateApplication();
 	//app->Run();
 	//app->print();

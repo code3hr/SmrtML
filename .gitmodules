@@ -1,3 +1,6 @@
 [submodule "SmrtML/vendor/spdlog"]
 	path = SmrtML/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "SmrtML/vendor/imguiplot"]
+	path = SmrtML/vendor/imguiplot
+	url = https://github.com/ocornut/imgui
