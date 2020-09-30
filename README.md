@@ -11,4 +11,6 @@ SmrtML is learning based ML engine for teaching and learning Machine Learning...
  * git clone --recursive https://github.com/code3hr/SmrtML.git
  * install hdf5 viewer from https://www.hdfgroup.org/downloads/hdfview/
  * run the GenerateProjects bash file to generate msvc solution file
+ note: runs only on windows for now
  ```
+ 
