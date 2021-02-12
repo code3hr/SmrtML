@@ -13,6 +13,7 @@ namespace smrt_ml {
 	};
 
 	//to be define in client
+
 	Application* CreateApplication();
 	void SML_API print();
 

@@ -1,7 +1,7 @@
 
 #include"smrt_ml.h"
 #include<iostream>
-#include "H5Cpp.h"
+//#include "H5Cpp.h"
 class Sandbox : public smrt_ml::Application
 {
 public:
@@ -28,8 +28,10 @@ smrt_ml::Application* smrt_ml::CreateApplication()
 	b.print();
 	joel::print();
 	//smrt_ml::printing();
+	smrt_ml::Log::Init();
 	SML_WARN("Initialized log!");
 	smrt_ml::print();
 	SML_ERROR(" just messing with the api");
 	return new Sandbox();
 }
+//smrt_ml::Application* app = smrt_ml::CreateApplication();

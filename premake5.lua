@@ -1,18 +1,22 @@
+-- solution config
 workspace "SmrtML"
     architecture "x64"
-
+-- variable for the config
     configurations
     {
         "Debug",
-        "Release",
-        "Dist"
+        "Release", -- optimization turn on but still have logging enable
+        "Dist" -- for distribution
     }
+    -- check premake tokens to understand the file path
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 startproject "Sandbox"
+-- project config 
 project "SmrtML"
     location "SmrtML"
-    kind "SharedLib"
+    kind "SharedLib" -- dll library
     language "c++"
+    -- .. used for appending
     targetdir("bin/" .. outputdir .. "/%{prj.name}")
     objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
@@ -20,11 +24,16 @@ project "SmrtML"
 
     pchheader "smrtpch.h"
     pchsource "SmrtML/src/smrtpch.cpp"
+
+    -- file to be included in the project
     files 
     {
         "%{prj.name}/src/**.h",
         "%{prj.name}/src/**.cpp"
     }
+
+        -- header file to be included in the project
+
     includedirs
     {
      "%{prj.name}/src",
@@ -44,6 +53,7 @@ project "SmrtML"
       "hdf5.lib",
        "hdf5_cpp.lib"
 }
+-- using filters for specific platform settings
     filter "system:windows"
          cppdialect "c++17"
          staticruntime "off"
@@ -55,11 +65,13 @@ project "SmrtML"
             "H5_BUILT_AS_DYNAMIC_LIB"
 
          }
+        --  where to post the dll after building
          postbuildcommands
          {
              ("IF NOT EXIST ../bin/" .. outputdir .. "/Sandbox mkdir ../bin" .. outputdir .. "/Sandbox"),
              ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
          }
+        --  filter for debug configuration
     filter "configurations:Debug"
         defines "SML_DEBUG"
         buildoptions "/MDd"
@@ -81,6 +93,8 @@ project "SmrtML"
         optimize "On"    
     -- filter {"system.windows", "configuration:Release"} for both if needed
     --   buildoptions "/MT" //FOR MULTI THREADING
+
+    -- configurations for Sandbox
 project "Sandbox"
 location "Sandbox"
 kind "ConsoleApp"

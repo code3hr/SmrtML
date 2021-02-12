@@ -9,5 +9,5 @@
 #endif // SML_BUILD_DLL
 
 #else
-   #error smrt_ml only supports windows!
+   #error Smrt_ML only supports windows!
 #endif //SML_PLATFORM_WINDOWS

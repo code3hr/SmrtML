@@ -1,5 +1,5 @@
 #pragma once
- //for use by sml application
+ //for use by SmrtML application
 
 #include "SmrtML/Application.h"
 
