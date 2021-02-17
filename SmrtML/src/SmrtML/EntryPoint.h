@@ -13,7 +13,7 @@ int main(int agrc, char ** agrv)
     //app->Run();
     //app->print();
     delete app;
-	//smrt_ml::Log::Init();
+	//smrt_ml::Log::Init(); already initialized in CreateApplication()
 	SML_CORE_WARN("Initialized log!");
 	float version = 1.0f;
 	SML_CORE_INFO("Hello VERSION = {0}", version);

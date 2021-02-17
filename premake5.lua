@@ -22,8 +22,8 @@ project "SmrtML"
 
 
 
-    pchheader "smrtpch.h"
-    pchsource "SmrtML/src/smrtpch.cpp"
+    pchheader "smrtpch.h" --create pch in vs
+    pchsource "SmrtML/src/smrtpch.cpp" --equivalent to project use pch in vs
 
     -- file to be included in the project
     files 
