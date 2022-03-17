@@ -1,5 +1,5 @@
 # SmrtML
-SmrtML is learning based ML engine for teaching and learning Machine Learning... 
+SmrtML is open source learning based ML engine for teaching and learning Machine Learning build with Qt... 
 
 ## Platforms
  * Linux, FreeBSD, OpenBSD, Solaris, AIX
