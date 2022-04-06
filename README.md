@@ -1,9 +1,9 @@
 # SmrtML
 SmrtML is open source learning based ML engine for teaching and learning Machine Learning build with Qt... 
 
-## Platforms
+## Target Platforms
  * Linux, FreeBSD, OpenBSD, Solaris, AIX
- * Windows (msvc 2013+, cygwin)
+ * Windows (msvc 2013+, cygwin) only on windows for now
  * macOS (clang 3.5+)
  ## Running
  ```
